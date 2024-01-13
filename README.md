@@ -1,4 +1,4 @@
-# Greenstand_Leaf_Segmentation
-A leaf segmentation project for Greenstand's treetracker leaf database.
+# Deeplabv3+ Fine-tuned for Image Segmentation on Plant Leaves
+
 
 *** Documentation under construction ***
