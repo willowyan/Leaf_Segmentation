@@ -1,4 +1,4 @@
-# Deeplabv3+ Fine-tuned for Image Segmentation on Plant Leaves
+# Deeplabv3+ Fine-tuned for Plant Leaves Segmentation
 
 
 *** Documentation under construction ***
