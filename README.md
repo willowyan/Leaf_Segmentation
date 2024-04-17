@@ -1,4 +1,3 @@
-# Deeplabv3+ Fine-tuned for Plant Leaves Segmentation
+# Plant Species Net for leaf species detection & segmentation.
 
-
-*** Documentation under construction ***
+Developed for Greenstand's Treetracker application (https://greenstand.org/treetracker/treetrackers).
