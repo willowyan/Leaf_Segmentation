@@ -21,6 +21,8 @@ class LeafDataset(data.Dataset):
         with open(split_fpath, 'r') as f:
             file_names = [x.strip() for x in f.readlines()]
 
+        # self.images = [os.path.join(image_dir, fname + '.JPG') for fname in file_names]
+        # self.masks = [os.path.join(mask_dir, fname + '_mask_.jpg') for fname in file_names]
         self.images = [os.path.join(image_dir, fname + '.jpg') for fname in file_names]
         self.masks = [os.path.join(mask_dir, fname + '_binarymask.jpg') for fname in file_names]
 
@@ -32,7 +34,7 @@ class LeafDataset(data.Dataset):
         mask = Image.open(mask_path)
 
         mask_array = np.array(mask)
-        mask_array = (mask_array > 128).astype(np.uint8)
+        mask_array = (mask_array > 128).astype(np.uint8) # Binarize to 0s and 1s
 
         mask_array = mask_array * 255
         mask = Image.fromarray(mask_array.astype(np.uint8))
@@ -50,7 +52,9 @@ class LeafDataset(data.Dataset):
     @staticmethod
     def decode_target(mask):
         """Decode binary mask to RGB image"""
-        leaf_color = [255, 0, 255]
+        #bkg_color = [0,0,0]
+        leaf_color = [255, 255, 255]
+
         rgb_mask = np.zeros((mask.shape[0], mask.shape[1], 3), dtype=np.uint8)
         rgb_mask[mask == 1] = leaf_color
 

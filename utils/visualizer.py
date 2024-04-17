@@ -4,7 +4,7 @@ import json
 class Visualizer(object):
     """ Visualizer
     """
-    def __init__(self, port='13579', env='main', id=None):
+    def __init__(self, port='8097', env='main', id=None):
         #self.cur_win = {}
         self.vis = Visdom(port=port, env=env)
         self.id = id
@@ -76,7 +76,7 @@ class Visualizer(object):
 
 if __name__=='__main__':
     import numpy as np
-    vis = Visualizer(port=35588, env='main')
+    vis = Visualizer(port=8097, env='main')
     tbl = {"lr": 214, "momentum": 0.9}
     vis.vis_table("test_table", tbl)
     tbl = {"lr": 244444, "momentum": 0.9, "haha": "hoho"}

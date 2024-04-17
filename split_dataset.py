@@ -1,6 +1,5 @@
 import os
 import random
-import shutil
 
 def split_dataset(image_dir, output_dir, train_ratio=0.7, val_ratio=0.2, test_ratio=0.1):
     images = [img for img in os.listdir(image_dir) if img.endswith('.jpg')]  # Adjust the extension
